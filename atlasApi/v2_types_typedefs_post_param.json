@@ -1,4 +1,4 @@
-curl -u admin:admin -X POST --header 'Accept: application/json' -d '{
+{
     "enumDefs": [],
     "structDefs": [],
     "classificationDefs": [
@@ -738,4 +738,4 @@ curl -u admin:admin -X POST --header 'Accept: application/json' -d '{
             ]
         }
     ]
-}' 'http://atlas:21000/api/atlas/v2/types/typedefs'
+}
