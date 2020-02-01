@@ -1,0 +1,1 @@
+curl -u admin:admin -X GET --header 'Accept: application/json' 'http://atlas:21000/api/atlas/v2/entity/uniqueAttribute/type/Table?attr:qualifiedName=sales_fact_daily_mv@cl1&ignoreRelationships=false&minExtInfo=false'

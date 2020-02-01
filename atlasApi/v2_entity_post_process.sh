@@ -31,4 +31,4 @@ curl -u admin:admin -X POST --header 'Content-Type: application/json;charset=UTF
         "guid": -1
     },
     "referredEntities": {}
-}' 'http://localhost:21000/api/atlas/v2/entity'
+}' 'http://atlas:21000/api/atlas/v2/entity'
