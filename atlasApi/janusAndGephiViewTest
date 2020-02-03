@@ -1,0 +1,13 @@
+:remote connect tinkerpop.server conf/remote.yaml
+
+:plugin use tinkerpop.gephi
+:remote connect tinkerpop.gephi
+:remote config host 192.168.1.8
+:remote config workspace janus
+
+
+
+
+graph = JanusGraphFactory.open("conf/janusgraph-hbase-solr-atlas.properties")
+g = graph.traversal()
+g.V().count().next()
