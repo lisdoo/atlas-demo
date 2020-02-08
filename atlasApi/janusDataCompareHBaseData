@@ -1,0 +1,92 @@
+Janus:
+gremlin> g.V().has('__guid', '08a208ed-7dbd-453a-af8b-1eca86373ce1').valueMap().unfold()
+==>__createdBy=[admin]
+==>__modifiedBy=[admin]
+==>__version=[0]
+==>Referenceable.qualifiedName=[loadSalesMonthlyExec2@cl115805327681961580532778196]
+==>Referenceable.__u_qualifiedName=[loadSalesMonthlyExec2@cl115805327681961580532778196]
+==>Asset.__s_name=[loadSalesMonthlyExec2]
+==>Asset.description=[hive query execution 2 for monthly summary]
+==>__guid=[08a208ed-7dbd-453a-af8b-1eca86373ce1]
+==>LoadProcessExecution.startTime=[1580532768196]
+==>LoadProcessExecution.endTime=[1580532778196]
+==>LoadProcessExecution.queryText=[create table as select ]
+==>LoadProcessExecution.queryPlan=[plan]
+==>LoadProcessExecution.queryId=[id]
+==>LoadProcessExecution.queryGraph=[graph]
+==>__typeName=[LoadProcessExecution]
+==>__superTypeNames=[Asset, ProcessExecution, Referenceable]
+==>__timestamp=[1580532768199]
+==>__modificationTimestamp=[1580532768199]
+==>__state=[ACTIVE]
+==>__classificationsText=[ETL ]
+==>__classificationNames=[|ETL|]
+==>__traitNames=[ETL]
+gremlin> g.V().has('__guid', '08a208ed-7dbd-453a-af8b-1eca86373ce1').outE()
+==>e[5rf2-20s0-191x-j34][94320-classifiedAs->24736]
+gremlin> g.V().has('__guid', '08a208ed-7dbd-453a-af8b-1eca86373ce1').outE().valueMap()
+==>[__isPropagated:false,__timestamp:1580532768199,__name:ETL,__modificationTimestamp:1580532768199,__state:ACTIVE,__createdBy:admin,__modifiedBy:admin]
+gremlin> g.V().has('__guid', '08a208ed-7dbd-453a-af8b-1eca86373ce1').outE().valueMap().unfold()
+==>__isPropagated=false
+==>__timestamp=1580532768199
+==>__name=ETL
+==>__modificationTimestamp=1580532768199
+==>__state=ACTIVE
+==>__createdBy=admin
+==>__modifiedBy=admin
+gremlin> g.V().has('__guid', '08a208ed-7dbd-453a-af8b-1eca86373ce1').outE().label()
+==>classifiedAs
+gremlin> g.V().has('__guid', '08a208ed-7dbd-453a-af8b-1eca86373ce1').outE().id()
+==>5rf2-20s0-191x-j34
+gremlin> g.V().has('__guid', '08a208ed-7dbd-453a-af8b-1eca86373ce1').id()
+==>94320
+
+
+HBase:
+get 'apache_atlas_entity_audit', '08a208ed-7dbd-453a-af8b-1eca86373ce1:1580532768199:0'
+COLUMN                                 CELL                                                                                                          
+ dt:a                                  timestamp=1580532768237, value=ENTITY_CREATE                                                                  
+ dt:d                                  timestamp=1580532768237, value=Created: {"typeName":"LoadProcessExecution","attributes":{"queryGraph":"graph",
+                                       "qualifiedName":"loadSalesMonthlyExec2@cl115805327681961580532778196","name":"loadSalesMonthlyExec2","queryTex
+                                       t":"create table as select ","description":"hive query execution 2 for monthly summary","startTime":1580532768
+                                       196,"queryPlan":"plan","endTime":1580532778196,"user":"John ETL","queryId":"id"},"guid":"08a208ed-7dbd-453a-af
+                                       8b-1eca86373ce1","isIncomplete":false,"provenanceType":0,"version":0,"relationshipAttributes":{"process":{"gui
+                                       d":"bdbc33f3-1cdc-4b34-ac1b-49ce2998318d","typeName":"LoadProcess"}},"classifications":[{"typeName":"ETL","ent
+                                       ityStatus":"ACTIVE"}],"proxy":false}                                                                          
+ dt:u                                  timestamp=1580532768237, value=admin
+格式化：
+{
+  "typeName": "LoadProcessExecution",
+  "attributes": {
+    "queryGraph": "graph",
+    "qualifiedName": "loadSalesMonthlyExec2@cl115805327681961580532778196",
+    "name": "loadSalesMonthlyExec2",
+    "queryText": "create table as select ",
+    "description": "hive query execution 2 for monthly summary",
+    "startTime": 1580532768196,
+    "queryPlan": "plan",
+    "endTime": 1580532778196,
+    "user": "John ETL",
+    "queryId": "id"
+  },
+  "guid": "08a208ed-7dbd-453a-af8b-1eca86373ce1",
+  "isIncomplete": false,
+  "provenanceType": 0,
+  "version": 0,
+  "relationshipAttributes": {
+    "process": {
+      "guid": "bdbc33f3-1cdc-4b34-ac1b-49ce2998318d",
+      "typeName": "LoadProcess"
+    }
+  },
+  "classifications": [
+    {
+      "typeName": "ETL",
+      "entityStatus": "ACTIVE"
+    }
+  ],
+  "proxy": false
+}
+
+
+

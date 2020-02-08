@@ -5,9 +5,26 @@
 :remote config host 192.168.1.8
 :remote config workspace janus
 
+#激活提示
+:plugin use tinkerpop.sugar
 
 
 
-graph = JanusGraphFactory.open("conf/janusgraph-hbase-solr-atlas.properties")
+
+
+
+graph = JanusGraphFactory.open("conf/janusgraph-hbase-solr.properties")
 g = graph.traversal()
 g.V().count().next()
+:plugin use tinkerpop.gephi
+:remote connect tinkerpop.gephi
+:remote config host 192.168.1.6
+:remote config workspace janus
+:> graph
+
+
+
+
+#遍历方法
+g.V(98432).valueMap().each{ it.entrySet().each{println it.getKey() + '-' + it.getValue()[0].getClass()} };
+g.V().valueMap().each{ it.entrySet().each{if (it.getValue()[0].getClass().toString().equals('class java.util.ArrayList')) {println it.getKey()}} };
