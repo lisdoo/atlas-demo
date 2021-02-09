@@ -1,0 +1,997 @@
+    1  cd sqoop/sqoop-1.4.7.bin__hadoop-2.6.0
+    2  ls -al 
+    3  bin/sqoop import --bindir ./bindir --hive-database employees --table employees --connect jdbc:mysql://192.168.1.15:3306/employees?serverTimezone=UTC --username root --password lenOvo.112 --hive-import -m 1
+    4  df -h
+    5  ls -al 
+    6  cd hive/
+    7  ls a-l 
+    8  ls -al 
+    9  cd apache-hive-3.1.2-bin
+   10  ls -al 
+   11  tail derby.log 
+   12  tail derby.log -n 100
+   13  ls -al 
+   14  hive
+   15  tail ../../hadoop/env.sh 
+   16  bin/hive
+   17  export JAVA_HOME=/root/jdk/jdk1.8.0_221
+   18  export HADOOP_HOME=/root/hadoop/hadoop-3.1.2
+   19  export HIVE_HOME=/root/hive/apache-hive-3.1.2-bin
+   20  [root@localhost apache-hive-3.1.2-bin]# bin/hive
+   21  cd /root/hadoop/
+   22  ls-a l 
+   23  ls -al 
+   24  mv hadoop-3.1.2 hadoop-3.1.2-bak
+   25  ls -al
+   26  tar -xzf hadoop-3.1.2.tar.gz 
+   27  cd /root/hive/
+   28  ls -al 
+   29  mv apache-hive-3.1.2-bin apache-hive-3.1.2-bin-bak
+   30  tar -xzf apache-hive-3.1.2-bin.tar.gz 
+   31  cd apache-hive-3.1.2-bin
+   32  bin/hive
+   33  cp ../apache-hive-3.1.2-bin-bak/conf/hive-site.xml ./conf/hive-site.xml
+   34  ls -al conf
+   35  netstat -ntlp
+   36  netstat -ntlp | grep "9092"
+   37  netstat -ntlp | grep "2181"
+   38  ls -al 
+   39  ls -al hadoop/hadoop-3.1.2
+   40  cd hadoop/hadoop-3.1.2
+   41  pwd
+   42  ls -al lib
+   43  find . core.jar
+   44  find . -name core.jar
+   45  ls -al include/
+   46  ls -al bin/
+   47  ls -al libexec/
+   48  ls -al 
+   49  ls -al share
+   50  ls -al share/hadoop/
+   51  cd /root
+   52  l s-al 
+   53  ls -al 
+   54  ls atlas/apache-atlas-sources-2.0.0/distro/target/apache-atlas-2.0.0-server/apache-atlas-2.0.0/
+   55  ls -al 
+   56  ls -al hbase/hbase-2.2.0
+   57  ls -al 
+   58  cd hbase/hbase-2.2.0
+   59  ls -al 
+   60  pwd
+   61  cd /root/hive/apache-hive-3.1.2-bin
+   62  ls -al 
+   63  pwd
+   64  cd /root/hbase/
+   65  ls -al 
+   66  cd hbase-2.2.0
+   67  ls al 
+   68  ls -al 
+   69  ls -al conf
+   70  vim conf/hbase-env.sh
+   71  ls -al lib/
+   72  ls -al lib/hbase*
+   73  ls -al lib/hbase-server*
+   74  ls -al lib/hbase-server*|hbase-comm
+   75  ls -al lib/hbase-server*|hbase-comm*
+   76  ls -al lib/[hbase-server*|hbase-comm*]
+   77  ls -al lib/hbase-comm
+   78  ls -al lib/hbase-comm*
+   79  pwd
+   80  cd /root/hadoop/
+   81  ls -al 
+   82  cd hadoop-3.1.2
+   83  ls -al 
+   84  ls -al lib
+   85  ls -al lib/native/
+   86  ls -al 
+   87  ls -al libexec/
+   88  ls -al libexec/tools/
+   89  ls -al etc/
+   90  ls -al etc/hadoop/
+   91  find . -name *.JAR
+   92  find . -name *.jar
+   93  find . -name hadoop-*-core.jar
+   94  find . -name hadoop-*.jar
+   95  find . -name hadoop-*core.jar
+   96  find . -name *core.jar
+   97  ls -al /root/hbase/hbase-2.2.0/lib/
+   98  cd /root/
+   99  ls -al 
+  100  mkdir zookeeper
+  101  cd zookeeper/
+  102  ls -al 
+  103  wget 
+  104  wget https://apache.org/dist/zookeeper/current/apache-zookeeper-3.5.5-bin.tar.gz
+  105  tar -xzf apache-zookeeper-3.5.5-bin.tar.gz 
+  106  ls -al 
+  107  cd apache-zookeeper-3.5.5-bin
+  108  ls -al 
+  109  pwd
+  110  ls -al conf/
+  111  tail /root/sqoop/sqoop-1.4.6-cdh5.5.2/conf/sqoop-env.sh 
+  112  tail /root/sqoop/sqoop-1.4.7.bin__hadoop-2.6.0/conf/sqoop-env.sh 
+  113  tail /root/sqoop/sqoop-1.4.7.bin__hadoop-2.6.0/conf/sqoop-env.sh -n 100
+  114  cd /root/hadoop/
+  115  ls -al 
+  116  cd hadoop-3.1.2
+  117  ls -al 
+  118  ls -al lib
+  119  ls -al share/
+  120  ls -al share/hadoop/
+  121  ls -al 
+  122  ls -al atlas/
+  123  cd sq
+  124  cd atlas/sqoop/
+  125  ls -al 
+  126  git clone https://github.com/datacharmer/test_db.git employees_db
+  127  df -h
+  128  ls -al
+  129  mkdir janusGraph
+  130  cd janusGraph/
+  131  ls -al 
+  132  wget https://github.com/JanusGraph/janusgraph/releases/download/v0.4.0/janusgraph-0.4.0-hadoop2.zip
+  133  ls -al 
+  134  unzip janusgraph-0.4.0-hadoop2.zip 
+  135  ls -al 
+  136  cd janusgraph-0.4.0-hadoop2
+  137  ls -al 
+  138  bin/janusgraph.sh 
+  139  tail /root/hadoop/
+  140  tail /root/hadoop/env.sh 
+  141  export JAVA_HOME=/root/jdk/jdk1.8.0_221
+  142  bin/janusgraph.sh 
+  143  bin/gremlin.sh
+  144  l s-al 
+  145  ls -al 
+  146  ls -al conf/janusgraph-berkeleyje.properties 
+  147  tail conf/janusgraph-berkeleyje.properties 
+  148  bin/gremlin.sh
+  149  ls -al conf
+  150  vim conf/janusgraph-hbase-solr.properties 
+  151  bin/gremlin.sh
+  152  ls -al 
+  153  vim conf/janusgraph-hbase-solr.properties 
+  154  ls -al conf
+  155  vim conf/janusgraph-hbase-solr.properties 
+  156  bin/gremlin.sh
+  157  ls -al 
+  158  exit
+  159  mkdir hdp
+  160  cd hdp
+  161  ls -al 
+  162  screen -dmS hdp
+  163  screen -r hdp
+  164  screen -list
+  165  screen -r hdp
+  166  pwd
+  167  wget https://archive.cloudera.com/hwx-sandbox/hdp/hdp-3.0.1/HDP_3.0.1_docker-deploy-scripts_18120587fc7fb.zip
+  168  ls -al 
+  169  sudo docker -versoin
+  170  sudo docker --versoin
+  171  docker --version
+  172  sudo docker --version
+  173  ls -al 
+  174  unzip HDP_3.0.1_docker-deploy-scripts_18120587fc7fb.zip 
+  175  ls -al 
+  176  ls -al assets/
+  177  docker info
+  178  history | grep "system"
+  179  sudo systemctl start docker
+  180  docker info
+  181  free -h
+  182  ls -al 
+  183  sudo docker-deploy-hdp30.sh 
+  184  sudo sh docker-deploy-hdp30.sh 
+  185  ls -al /root/atlas/apache-atlas-sources-2.0.0/distro/target/apache-atlas-2.0.0-server/apache-atlas-2.0.0/bin/atlas_stop.py 
+  186  /root/atlas/apache-atlas-sources-2.0.0/distro/target/apache-atlas-2.0.0-server/apache-atlas-2.0.0/bin/atlas_stop.py 
+  187  sudo docker ps
+  188  sudo sh docker-deploy-hdp30.sh 
+  189  sudo docker ps
+  190  sudo docker --help
+  191  exit
+  192  df -h
+  193  screen -list
+  194  screen -r hdp
+  195  exit
+  196  netstat -ntlp
+  197  ls -al 
+  198  hive/apache-hive-3.1.2-bin/bin/
+  199  ls -al 
+  200  ls pal 
+  201  ls -al hdp/HDP_3.0.1_docker-deploy-scripts_18120587fc7fb.zip 
+  202  ls -al 
+  203  sudo docker image ls
+  204  sudo docker run 38addccc7261
+  205  sudo docker image ls
+  206  cd hdp/
+  207  ls -al 
+  208  vim docker-deploy-hdp30.sh 
+  209  exit
+  210  screen -list
+  211  exit
+  212  wget https://archive.cloudera.com/hwx-sandbox/hdp/hdp-3.0.1/HDP_3.0.1_vmware_181205.ova
+  213  screen -list
+  214  exit
+  215  cd hdp/
+  216  ls -al
+  217  ls -alh
+  218  screen -list
+  219  screen -h
+  220  screen -R hdp
+  221  screen -h
+  222  screen -x hdp
+  223  screen -list
+  224  df -jh
+  225  df -h
+  226  ls -al 
+  227  df -h
+  228  netstat -ntlp
+  229  netstat -ntlp | grep "1080"
+  230  ls -al 
+  231  cd hdp
+  232  l s-al 
+  233  ls -al 
+  234  ls -al sandbox
+  235  ls -al sandbox-flavor 
+  236  ls -al assets/
+  237  wget https://archive.cloudera.com/hwx-sandbox/hdp/hdp-3.0.1/HDP_3.0.1_vmware_181205.ova
+  238  ls -al 
+  239  rm -v HDP_3.0.1_vmware_181205.ova 
+  240  screen -r hdp
+  241  screen -list
+  242  screen -dmS hdp
+  243  screen -r hdp
+  244  ssh root@192.168.1.15
+  245  cd hdp/
+  246  ls -al 
+  247  screen -r hdp
+  248  screen -h
+  249  df h
+  250  df -h
+  251  cd sss
+  252  ls -al 
+  253  mkdir -p /etc/systemd/system/docker.service.d
+  254  vim /etc/systemd/system/docker.service.d/http-proxy.conf
+  255  systemctl daemon-reload
+  256  systemctl restart docker
+  257  screen -list
+  258  exit
+  259  ssh root@192.168.1.15
+  260  ls -al 
+  261  netstat -ntlp
+  262  scree -r list
+  263  screen -list
+  264  screen -r ssh
+  265  cd ssh
+  266  ls -al 
+  267  netstat -ntlp
+  268  tail ssh.sh
+  269  tail ssh-atlas.sh
+  270  ls -al /home/keys/
+  271  free -h
+  272  ssh root@192.168.1.15
+  273  ip addr
+  274  ssh root@192.168.1.15
+  275  df -h
+  276  ssh root@192.168.1.15
+  277  free -h
+  278  shutdown
+  279  cd 
+  280  cd /root/atlas/apache-atlas-sources-2.0.0/distro/target/apache-atlas-2.0.0-server/apache-atlas-2.0.0
+  281  bin/quick_start.py 
+  282  tail /root/atlas/env.sh 
+  283  export JAVA_HOME=/root/jdk/jdk1.8.0_221
+  284  export MAVEN_HOME=/root/maven/apache-maven-3.6.2
+  285  export MAVEN_OPTS="-Xms2g -Xmx2g"
+  286  export PATH=$PATH:$JAVA_HOME/bin:$MAVEN_HOME/bin
+  287  bin/quick_start.py 
+  288  bin/atlas_start.py 
+  289  ls -al /root/hbase/hbase-2.2.0/conf
+  290  export HBASE_CONF_DIR=/root/hbase/hbase-2.2.0/conf
+  291  bin/atlas_start.py 
+  292  bin/quick_start.py 
+  293  tail ssh.sh 
+  294  sh ssh.sh 
+  295  cd solr/
+  296  cd solr-8.2.0
+  297  ls -al 
+  298  ls -al example/cloud/node1/solr/
+  299  bin/solr start -c -p 8983 -s example/cloud/node1/solr
+  300  tail /root/atlas/env.sh 
+  301  export JAVA_HOME=/root/jdk/jdk1.8.0_221
+  302  export PATH=$PATH:$JAVA_HOME/bin:$MAVEN_HOME/bin
+  303  bin/solr start -c -p 8983 -s example/cloud/node1/solr
+  304  bin/solr start -c -p 8983 -s example/cloud/node1/solr -force
+  305  bin/solr start -c -p 7574 -z localhost:9983 -s example/cloud/node2/solr
+  306  bin/solr start -c -p 7574 -z localhost:9983 -s example/cloud/node2/solr -force
+  307  systemctl stop firewalld.service
+  308  screen -dmS ssh
+  309  cd ssh
+  310  ls -al 
+  311  screen -r ssh
+  312  shutdown
+  313  df -h
+  314  ls -al 
+  315  ls -al /mnt/
+  316  ls -al 
+  317  ls -al a
+  318  cd atlas/
+  319  ls -al 
+  320  docker 
+  321  docker container ls
+  322  sudo systemctl start docker
+  323  docker container ls
+  324  docker container ls -a
+  325  docker container rm 08f77efb560f
+  326  docker container rm e66520cb0975
+  327  docker image ls
+  328  docker image rm 38addccc7261
+  329  docker pull sburn/apache-atlas
+  330  vim /etc/systemd/system/docker.service.d/http-proxy.conf
+  331   systemctl daemon-reload
+  332  systemctl restart docker
+  333  docker pull sburn/apache-atlas
+  334  ls -al 
+  335  docker container ls
+  336  docker image ls
+  337  docker pull sburn/apache-atlas
+  338  docker image ls
+  339  docker run --detach     -p 21000:21000     --name atlas     sburn/apache-atlas     /opt/apache-atlas-2.0.0/bin/atlas_start.py
+  340  free -h
+  341  docker container ls
+  342  docker logs 9a0eabfb2f4c
+  343  docker exec -it 9a0eabfb2f4c bash
+  344  ls -al 
+  345  free -h
+  346  ls -al 
+  347  docker container ls
+  348  docker container stop 9a0eabfb2f4c
+  349  free -h
+  350  ls -al 
+  351  cd atlas/
+  352  ls -al 
+  353  cat env.sh 
+  354  ls -al 
+  355  cd ..
+  356  ls -al 
+  357  ls -al solr/
+  358  ls -al hbase/
+  359  ls -al hbase/hbase-2.2.0
+  360  ls -al hbase/hbase-2.2.0/bin/
+  361  sh hbase/hbase-2.2.0/bin/start-hbase.sh 
+  362  sh atlas/env.sh 
+  363  sh hbase/hbase-2.2.0/bin/start-hbase.sh 
+  364  cat atlas/env.sh 
+  365  java -version
+  366  export %JAVA_HOME
+  367  export $JAVA_HOME
+  368  echo $JAVA_HOME
+  369  cat atlas/env.sh 
+  370  export JAVA_HOME=/root/jdk/jdk1.8.0_221
+  371  export MAVEN_HOME=/root/maven/apache-maven-3.6.2
+  372  export MAVEN_OPTS="-Xms2g -Xmx2g"
+  373  export PATH=$PATH:$JAVA_HOME/bin:$MAVEN_HOME/bin
+  374  export MANAGE_LOCAL_HBASE=true
+  375  export MANAGE_LOCAL_SOLR=true
+  376  echo $JAVA_HOME
+  377  sh hbase/hbase-2.2.0/bin/start-hbase.sh 
+  378  cat /root/hbase/hbase-2.2.0/bin/../logs/hbase-root-master-localhost.localdomain.out
+  379  ls -al solr/solr-8.2.0/bin/solr
+  380  solr/solr-8.2.0/bin/solr -n 8984
+  381  /root/hbase/hbase-2.2.0/bin/../logs/hbase-root-master-localhost.localdomain.outtty when starting Solr.
+  382                    For example, to add configuration folder that jetty should read
+  383                    you could pass: -j "--include-jetty-dir=/etc/jetty/custom/server/"
+  384                    In most cases, you should wrap the additional parameters in double quotes.
+  385    -noprompt     Don't prompt for input; accept all defaults when running examples that accept user input
+  386    -v and -q     Verbose (-v) or quiet (-q) logging. Sets default log level to DEBUG or WARN instead of INFO
+  387    -V/-verbose   Verbose messages from this script
+  388  [root@localhost ~]# /root/hbase/hbase-2.2.0/bin/../logs/hbase-root-master-localhost.localdomain.out
+  389                                                                                                                                      
+  390  df -h
+  391  free -h
+  392  netstat -nltp 
+  393  netstat -nltp | grep "7823"
+  394  ls -al 
+  395  solr/solr-8.2.0/bin/solr -n 8984
+  396  cat atlas/env.sh 
+  397  export JAVA_HOME=/root/jdk/jdk1.8.0_221
+  398  export MAVEN_HOME=/root/maven/apache-maven-3.6.2
+  399  export MAVEN_OPTS="-Xms2g -Xmx2g"
+  400  export PATH=$PATH:$JAVA_HOME/bin:$MAVEN_HOME/bin
+  401  export MANAGE_LOCAL_HBASE=true
+  402  export MANAGE_LOCAL_SOLR=true
+  403  solr/solr-8.2.0/bin/solr -n 8984
+  404  solr/solr-8.2.0/bin/solr -p 8984
+  405  solr/solr-8.2.0/bin/solr -p 8984 -force
+  406  netstat -ntlp
+  407  ifconfig
+  408  systemctl status firewalld.service
+  409  systemctl stop firewalld.service
+  410  ls -al solr/solr-8.2.0/server/solr/new_core/
+  411  netstat -ntlp
+  412  netstat -nltp | grep "7823"
+  413  free -h
+  414  atlas/apache-atlas-sources-2.0.0/distro/target/apache-atlas-2.0.0-bin/apache-atlas-2.0.0/bin/atlas_start.py 
+  415  export HBASE_CONF_DIR=/root/hbase/hbase-2.2.0/conf/
+  416  pwd
+  417  atlas/apache-atlas-sources-2.0.0/distro/target/apache-atlas-2.0.0-bin/apache-atlas-2.0.0/bin/atlas_start.py 
+  418  atlas/apache-atlas-sources-2.0.0/distro/target/apache-atlas-2.0.0-bin/apache-atlas-2.0.0/bin/atlas_stop.py 
+  419  atlas/apache-atlas-sources-2.0.0/distro/target/apache-atlas-2.0.0-bin/apache-atlas-2.0.0/bin/quick_start.py 
+  420  cd atlas/apache-atlas-sources-2.0.0/distro/target/apache-atlas-2.0.0-bin/apache-atlas-2.0.0/bin/
+  421  ls -al
+  422  ./atlas_start.py 
+  423  ls -al 
+  424  cd ..
+  425  l s-al 
+  426  ls -aL 
+  427  LS -AL 
+  428  ls -al 
+  429  ls -al logs/
+  430  cat logs/atlas.20200128-073256.err 
+  431  cat logs/atlas.20200128-073256.out
+  432  ls -al ~/janusGraph/
+  433  bin/atlas_stop.py 
+  434  cd ~/janusGraph/janusgraph-0.4.0-hadoop2
+  435  ls -al 
+  436  ls -al bin/
+  437  sh bin/janusgraph.sh 
+  438  sh bin/janusgraph.sh start
+  439  netstat -ntlp
+  440  ls -al 
+  441  docker pull janusgraph/janusgraph
+  442  docker run -it -p 8182:8182 janusgraph/janusgraph
+  443  docker run -p 8182:8182 janusgraph/janusgraph
+  444  docker container ls
+  445  docker container ls -a
+  446  docker container rm 3ba9ef72fa70
+  447  docker container rm d6b2d407f829
+  448  docker container rm 77f5afb1e305
+  449  docker container rm 562d69df9201
+  450  docker container ls -a
+  451  shutdown
+  452  cd atlas/apache-atlas-sources-2.0.0/distro/target/apache-atlas-2.0.0-bin/apache-atlas-2.0.0/
+  453  bin/atlas_start.py 
+  454  cat ~/atlas/env.sh 
+  455  export JAVA_HOME=/root/jdk/jdk1.8.0_221
+  456  export MAVEN_HOME=/root/maven/apache-maven-3.6.2
+  457  export MAVEN_OPTS="-Xms2g -Xmx2g"
+  458  export PATH=$PATH:$JAVA_HOME/bin:$MAVEN_HOME/bin
+  459  export MANAGE_LOCAL_HBASE=true
+  460  export MANAGE_LOCAL_SOLR=true
+  461  export HBASE_CONF_DIR=/root/hbase/hbase-2.2.0/conf/
+  462  bin/atlas_start.py 
+  463  cat logs/atlas.20200128-075058.out
+  464  netstat -ntlp
+  465  netstat -ntlp | grep "8182"
+  466  bin/atlas_start.py 
+  467  bin/atlas_stop.py 
+  468  cd ~/janusGraph/janusgraph-0.4.0-hadoop2/
+  469  ls -al
+  470  sh bin/gremlin.sh
+  471  ls -al 
+  472  df -h
+  473  ls -al 
+  474  cd ~/atlas/apache-atlas-sources-2.0.0/distro/target/apache-atlas-2.0.0-bin/apache-atlas-2.0.0/
+  475  ls -al bin/
+  476  ls -al logs
+  477  rm logs/*
+  478  y
+  479  ls -al logs
+  480  bin/atlas_start.py 
+  481  ls -al logs
+  482  cat logs/atlas.20200128-081125.out
+  483  netstat -ntlp | grep "8182"
+  484  cd janusGraph/janusgraph-0.4.0-hadoop2
+  485  ls -al 
+  486  sh bin/gremlin-server.sh start
+  487  sh bin/gremlin.sh 
+  488  cat ~/atlas/env.sh 
+  489  export JAVA_HOME=/root/jdk/jdk1.8.0_221
+  490  export MAVEN_HOME=/root/maven/apache-maven-3.6.2
+  491  export MAVEN_OPTS="-Xms2g -Xmx2g"
+  492  export PATH=$PATH:$JAVA_HOME/bin:$MAVEN_HOME/bin
+  493  export MANAGE_LOCAL_HBASE=true
+  494  export MANAGE_LOCAL_SOLR=true
+  495  sh bin/gremlin.sh 
+  496  ls -al 
+  497  sh bin/gremlin-server.sh
+  498  netstat -ntlp 
+  499  hbase/hbase-2.2.0/bin/
+  500  cat atlas/env.sh 
+  501  export JAVA_HOME=/root/jdk/jdk1.8.0_221
+  502  export MAVEN_HOME=/root/maven/apache-maven-3.6.2
+  503  export MAVEN_OPTS="-Xms2g -Xmx2g"
+  504  export PATH=$PATH:$JAVA_HOME/bin:$MAVEN_HOME/bin
+  505  export MANAGE_LOCAL_HBASE=true
+  506  export MANAGE_LOCAL_SOLR=true
+  507  sh hbase/hbase-2.2.0/bin/start-hbase.sh 
+  508  netstat -ntlp 
+  509  systemctl status firewalld.service
+  510  systemctl stop firewalld.service
+  511  pwd
+  512  solr/solr-8.2.0/bin/solr -p 8984
+  513  solr/solr-8.2.0/bin/solr -p 8984 -force
+  514  cd atlas/apache-atlas-sources-2.0.0/distro/target/apache-atlas-2.0.0-bin/apache-atlas-2.0.0/
+  515  ls -al logs
+  516  sudo rm logs/*
+  517  ls -al logs
+  518  bin/atlas_start.py 
+  519  cat ~/hbase/hbase-2.2.0/conf/hbase-policy.xml 
+  520  bin/atlas_start.py 
+  521  vim ~/atlas/env.sh 
+  522  cat ~/atlas/env.sh 
+  523  export HBASE_CONF_DIR=/root/hbase/hbase-2.2.0/conf/hbase-policy.xml
+  524  bin/atlas_start.py 
+  525  ls -al logs
+  526  cat logs/atlas.20200129-002000.out
+  527  ls -al ~/.m2/repository/
+  528  pwd
+  529  cat ~/atlas/env.sh 
+  530  ls -al logs/atlas.20200129-002000.out
+  531  cat logs/atlas.20200129-002000.out
+  532  ls -al 
+  533  ls -al bin
+  534  cat bin/atlas_start.py 
+  535  cp bin/atlas_start.py bin/stlas_start_deg.py
+  536  mv bin/stlas_start_deg.py atlas_start_dug.py
+  537  ls -al 
+  538  mv atlas_start_dug.py bin/
+  539  ls -al 
+  540  vim bin/atlas_start_dug.py 
+  541  bin/atlas_stop.py 
+  542  bin/atlas_start_dug.py 
+  543  netstat -ntlp 
+  544  netstat -ntlp | grep "8000"
+  545  ~/solr/solr-8.2.0/bin/solr stop -p 8984
+  546  ~/solr/solr-8.2.0/bin/solr -p 8983
+  547  ~/solr/solr-8.2.0/bin/solr -p 8983 -force
+  548  ls -al
+  549  cd ..
+  550  l s-al 
+  551  ls -al 
+  552  cd ..
+  553  l s-al 
+  554  ls -al 
+  555  cd ..
+  556  ls -al 
+  557  cd ..
+  558  l s-al 
+  559  ls -al 
+  560  pwd
+  561  mvn install
+  562  ls -al 
+  563  cd ..
+  564  ls -al 
+  565  git clone https://github.com/apache/atlas.git
+  566  df h-
+  567  df -h
+  568  ls -al; 
+  569  ls -al 
+  570  docker container ls
+  571  sudo systemctl start dockdr
+  572  sudo systemctl start docker
+  573  docker container ls
+  574  docker container ls -a
+  575  docker image ls
+  576  docker run -it -p 8182:8182 janusgraph/janusgraph
+  577  ls -al
+  578  cat atlas/env.sh 
+  579  export JAVA_HOME=/root/jdk/jdk1.8.0_221
+  580  export MAVEN_HOME=/root/maven/apache-maven-3.6.2
+  581  export MAVEN_OPTS="-Xms2g -Xmx2g"
+  582  export PATH=$PATH:$JAVA_HOME/bin:$MAVEN_HOME/bin
+  583  export MANAGE_LOCAL_HBASE=true
+  584  export MANAGE_LOCAL_SOLR=true
+  585  export HBASE_CONF_DIR=/root/hbase/hbase-2.2.0/conf/hbase-policy.xml
+  586  export MANAGE_LOCAL_HBASE=false
+  587  export MANAGE_LOCAL_SOLR=false
+  588  cd atlas/apache-atlas-sources-2.0.0/distro/target/apache-atlas-2.0.0-bin
+  589  ls -al 
+  590  cd apache-atlas-2.0.0/
+  591  ls -al 
+  592  bin/atlas_start.py 
+  593  ls -al logs/atlas.20200129-051959.out
+  594  cat logs/atlas.20200129-051959.out
+  595  vim conf/atlas-application.properties 
+  596  bin/atlas_stop.py 
+  597  bin/atlas_start.py 
+  598  bin/atlas_stop.py 
+  599  python
+  600  cd atlas/
+  601  ls
+  602  cd atlas/
+  603  ls -al
+  604  mvn 
+  605  cat ../env.sh 
+  606  export JAVA_HOME=/root/jdk/jdk1.8.0_221
+  607  export MAVEN_HOME=/root/maven/apache-maven-3.6.2
+  608  export MAVEN_OPTS="-Xms2g -Xmx2g"
+  609  export PATH=$PATH:$JAVA_HOME/bin:$MAVEN_HOME/bin
+  610  mvn clean install
+  611  ls -al 
+  612  ls -al distro/
+  613  mvn clean install -Dmaven.test.skip=true
+  614  ls -al 
+  615  ls -al distro/target/
+  616  ls -al distro/target/bin/
+  617  ls -al distro/target/ -h
+  618  ls -alh ../apache-atlas-sources-2.0.0/distro/target/
+  619  ls -al 
+  620  ls -alh target/
+  621  ls -alh distro/
+  622  ls -alh distro/target/
+  623  find *.tar*
+  624  find *.gz
+  625  mvn clean package -Dmaven.test.skip=true -Pdist
+  626  ls -al 
+  627  ls -al distro/target/ -h
+  628  cat ../env.sh 
+  629  export JAVA_HOME=/root/jdk/jdk1.8.0_221
+  630  export MAVEN_HOME=/root/maven/apache-maven-3.6.2
+  631  export MAVEN_OPTS="-Xms2g -Xmx2g"
+  632  export PATH=$PATH:$JAVA_HOME/bin:$MAVEN_HOME/bin
+  633  export MANAGE_LOCAL_HBASE=true
+  634  export MANAGE_LOCAL_SOLR=true
+  635  netstat -ntlp
+  636  ~/solr/solr-8.2.0/solr stop -p 8983
+  637  ~/solr/solr-8.2.0/bin/solr stop -p 8983
+  638  netstat -ntlp
+  639  sh ~/hbase/hbase-2.2.0/bin/stop-hbase.sh
+  640  netstat -ntlp
+  641  docker container ls
+  642  docker container stop 6e84569589d0
+  643  netstat -ntlp
+  644  cd distro/target/
+  645  ls -al h
+  646  ls -alh
+  647  cd apache-atlas-3.0.0-SNAPSHOT-bin
+  648  ls -al 
+  649  cd apache-atlas-3.0.0-SNAPSHOT/
+  650  ls -al 
+  651  bin/atlas_start.py 
+  652  export
+  653  ls -al ~/hbase/hbase-2.2.0/conf/
+  654  cat ~/hbase/hbase-2.2.0/conf/hbase-site.xml 
+  655  ls -al /mnt/hbase/
+  656  ls -al /mnt/zookeeper/
+  657  ls -al ~/zookeeper/apache-zookeeper-3.5.5-bin/bin/
+  658  ls -al 
+  659  ls -al ../..
+  660  ls -al ../.. -h
+  661  cd ../../
+  662  cd apache-atlas-3.0.0-SNAPSHOT-server
+  663  ls al 
+  664  ls -al 
+  665  cd apache-atlas-3.0.0-SNAPSHOT/
+  666  ls -al 
+  667  bin/atlas_start.py 
+  668  ls -al 
+  669  cd ../..
+  670  ls -al 
+  671  ls -al conf/
+  672  cat conf/atlas-env.sh 
+  673  ls -al conf/
+  674  ls -al conf/hbase/
+  675  ls -al conf/solr/
+  676  ls -al conf/zookeeper/
+  677  cat conf/hbase/hbase-site.xml.template 
+  678  ls -al 
+  679  ls -al apache-atlas-3.0.0-SNAPSHOT-sqoop-hook
+  680  ls -al apache-atlas-3.0.0-SNAPSHOT-sqoop-hook/apache-atlas-sqoop-hook-3.0.0-SNAPSHOT/
+  681  ls -al apache-atlas-3.0.0-SNAPSHOT-sqoop-hook/apache-atlas-sqoop-hook-3.0.0-SNAPSHOT/hook/
+  682  ls -al apache-atlas-3.0.0-SNAPSHOT-sqoop-hook/apache-atlas-sqoop-hook-3.0.0-SNAPSHOT/hook/sqoop/
+  683  ls -al 
+  684  ls -al bin
+  685  ls -al conf/
+  686  find atlas-env*
+  687  find atlas-env.sh
+  688  find
+  689  find *.sh
+  690  find "*.sh*
+  691  "
+  692  find "*.sh"
+  693  ls -al 
+  694  ls -al conf
+  695  ls -al apache-atlas-3.0.0-SNAPSHOT-server/apache-atlas-3.0.0-SNAPSHOT/conf/hbase/hbase-site.xml.template 
+  696  cd apache-atlas-3.0.0-SNAPSHOT-server/apache-atlas-3.0.0-SNAPSHOT/
+  697  ls -al 
+  698  ls -al conf/
+  699  cp conf/hbase/hbase-site.xml.template conf/hbase/hbase-site.xml
+  700  ls -al conf/hbase/
+  701  bin/atlas_start.py 
+  702  export HBASE_CONF_DIR=/root/atlas/atlas/distro/target/apache-atlas-3.0.0-SNAPSHOT-server/apache-atlas-3.0.0-SNAPSHOT/hbase/conf
+  703  bin/atlas_start.py 
+  704  export HBASE_CONF_DIR=/root/atlas/atlas/distro/target/apache-atlas-3.0.0-SNAPSHOT-server/apache-atlas-3.0.0-SNAPSHOT/hbase/conf
+  705  echo $HBASE_CONF_DIR
+  706  bin/atlas_start.py 
+  707  ls -al conf/hbase/
+  708  cat conf/hbase/
+  709  cat conf/hbase/hbase-site.xml
+  710  bin/atlas_start.py 
+  711  cat ~/atlas/env.sh 
+  712  export HBASE_CONF_DIR=/root/atlas/atlas/distro/target/apache-atlas-3.0.0-SNAPSHOT-server/apache-atlas-3.0.0-SNAPSHOT/hbase/conf/hbase-site.xml
+  713  bin/atlas_start.py 
+  714  export
+  715  export -h
+  716  export HBASE_CONF_DIR=/root/hbase/hbase-2.2.0/conf/
+  717  bin/atlas_start.py 
+  718  bin/atlas_stop.py 
+  719  ls -al /root/hbase/hbase-2.2.0/conf/
+  720  export HBASE_CONF_DIR=/root/atlas/atlas/distro/target/apache-atlas-3.0.0-SNAPSHOT-server/apache-atlas-3.0.0-SNAPSHOT/hbase/conf
+  721  export HBASE_CONF_DIR=/root/atlas/atlas/distro/target/apache-atlas-3.0.0-SNAPSHOT-server/apache-atlas-3.0.0-SNAPSHOT/hbase/conf/
+  722  bin/atlas_start.py 
+  723  ls -al $HBASH_CONF_DIR
+  724  ls -al $HBASE_CONF_DIR
+  725  /root/atlas/atlas/distro/target/apache-atlas-3.0.0-SNAPSHOT-server/apache-atlas-3.0.0-SNAPSHOT/conf/hbase/
+  726  export HBASE_CONF_DIR=/root/atlas/atlas/distro/target/apache-atlas-3.0.0-SNAPSHOT-server/apache-atlas-3.0.0-SNAPSHOT/conf/hbase
+  727  export HBASE_CONF_DIR=/root/atlas/atlas/distro/target/apache-atlas-3.0.0-SNAPSHOT-server/apache-atlas-3.0.0-SNAPSHOT/conf/hbase/
+  728  bin/atlas_start.py 
+  729  ls -al
+  730  ls -al logs
+  731  ls -al logs -h
+  732  cat logs/atlas.20200129-081518.out
+  733  jps
+  734  bin/atlas_stop.py 
+  735  jps
+  736  ls al 
+  737  ls -al 
+  738  cd ..
+  739  cd ../..
+  740  ls -al 
+  741  cd ..
+  742  ls -al 
+  743  mvn clean -DskipTests package -Pdist,embedded-hbase-solr
+  744  cd atlas/atlas/
+  745  ls -al 
+  746  ls -al distro/target/ -h
+  747  mvn clean -DskipTests package -Pdist,embedded-hbase-solr
+  748  cat ~/atlas/env.sh 
+  749  export JAVA_HOME=/root/jdk/jdk1.8.0_221
+  750  export MAVEN_HOME=/root/maven/apache-maven-3.6.2
+  751  export MAVEN_OPTS="-Xms2g -Xmx2g"
+  752  export PATH=$PATH:$JAVA_HOME/bin:$MAVEN_HOME/bin
+  753  export MANAGE_LOCAL_HBASE=true
+  754  export MANAGE_LOCAL_SOLR=true
+  755  mvn clean -DskipTests package -Pdist,embedded-hbase-solr
+  756  ls -al distro/target/
+  757  time
+  758  date
+  759  cd distro/target/apache-atlas-3.0.0-SNAPSHOT-server/apache-atlas-3.0.0-SNAPSHOT/
+  760  ls -al 
+  761  bin/atlas_start.py 
+  762  ls -al logs/atlas.20200129-205357.out 
+  763  cat logs/atlas.20200129-205357.out 
+  764  bin/atlas_stop.py 
+  765  export MANAGE_LOCAL_HBASE=false
+  766  export MANAGE_LOCAL_SOLR=false
+  767  bin/atlas_start.py 
+  768  bin/atlas_stop.py 
+  769  cd ..
+  770  ls -al 
+  771  ls -al hbase
+  772  ls -al solr
+  773  ls -al 
+  774  export
+  775  cat ~/atlas/env.sh 
+  776  export | grep "HBASE_CONF_DIR"
+  777  export MANAGE_LOCAL_HBASE=true
+  778  export MANAGE_LOCAL_SOLR=true
+  779  cd apache-atlas-3.0.0-SNAPSHOT-bin/apache-atlas-3.0.0-SNAPSHOT/
+  780  ls -al 
+  781  ls -al solr/
+  782  ls -al hbase/
+  783  bin/atlas_start.py 
+  784  bin/atlas_stop.py 
+  785  bin/atlas_start.py 
+  786  bin/atlas_stop.py 
+  787  exit
+  788  netstat -ntlp
+  789  cd atlas/atlas/distro/target/apache-atlas-3.0.0-SNAPSHOT-bin/apache-atlas-3.0.0-SNAPSHOT/
+  790  ls -al logs
+  791  cat logs/atlas.20200129-210432.out 
+  792  ls -al logs
+  793  cat logs/atlas.20200129-210432.out 
+  794  cat logs/application.log 
+  795  ls -al logs
+  796  cat logs/atlas.20200129-210432.out 
+  797  ls -al 
+  798  solr/bin/solr -p 9838
+  799  cat ~/atlas/env.sh 
+  800  export JAVA_HOME=/root/jdk/jdk1.8.0_221
+  801  export MAVEN_HOME=/root/maven/apache-maven-3.6.2
+  802  export MAVEN_OPTS="-Xms2g -Xmx2g"
+  803  export PATH=$PATH:$JAVA_HOME/bin:$MAVEN_HOME/bin
+  804  solr/bin/solr -p 9838
+  805  solr/bin/solr -p 9838 -force
+  806  ls -al logs/
+  807  cat logs/application.log 
+  808  netstat -ntlp
+  809  cat logs/application.log 
+  810  ls -al 
+  811  cat /etc/sudoers
+  812  chown u+w /etc/sudoers
+  813  chmod u+w /etc/sudoers
+  814  ls -al /etc/sudoers
+  815  vim /etc/sudoers
+  816  chmod u-w /etc/sudoers
+  817  ls -al /etc/sudoers
+  818  chmod u+w /etc/sudoers
+  819  vim /etc/sudoers
+  820  chmod u-w /etc/sudoers
+  821  history | grep "git"
+  822  cat logs/application.log 
+  823  cp ~/atlas/env.sh /etc/profile.d/
+  824  ls -al /etc/profile.d/env.sh 
+  825  vim /etc/profile.d/env.sh 
+  826  ls -al ~/jdk
+  827  ls -al 
+  828  ls -al ~
+  829  cp ~/jdk /mnt/
+  830  cp -r ~/jdk /mnt/
+  831  vim /etc/profile.d/env.sh 
+  832  cp -r ~/maven/ /mnt/
+  833  ls -al /mnt/
+  834  cp -r ~/atlas/atlas/ /home/atlas/gittemp/
+  835  chmod a+w /home/atlas/gittemp/atlas/
+  836  chown -h
+  837  chown -help
+  838  chown --help
+  839  chown -R atlas /home/atlas/gittemp/atlas/
+  840  ssh atlas@192.168.1.6
+  841  ls -al /root
+  842  du -h --max-depth=1 /root/.m2
+  843  cp -r /root/.m2 /home/atlas/
+  844  vim /etc/sudoers
+  845  cp -r /root/.m2 /home/atlas/
+  846  chown -R atlas /home/atlas/.m2
+  847  ls -al ~/
+  848  du -h --max-depth=1 ~/.npm
+  849  ls -al ~/zookeeper/
+  850  ls -al ~/solr/
+  851  ls -al ~/hbase/
+  852  mkdir /home/atlas/tools
+  853  chown -R atlas /home/atlas/tools/
+  854  mv -v ~/zookeeper/apache-zookeeper-3.5.5-bin.tar.gz /home/atlas/tools/
+  855  mv -v ~/solr/solr-8.2.0.tgz /home/atlas/tools/
+  856  mv -v ~/hbase/hbase-2.2.0-bin.tar.gz /home/atlas/tools/
+  857  ls -al /home/atlas/tools/
+  858  chown -R atlas /home/atlas/tools/
+  859  ls -al /home/atlas/tools/
+  860  ls -al ~
+  861  df -h
+  862  timedatectl
+  863  sudo timedatectl set-timezone Asia/Shanghai
+  864  sudo vim /etc/sudoers
+  865  vim /etc/sudoers
+  866  sudo vim /etc/sudoers
+  867  exit
+  868  sudo ls 
+  869  sudo
+  870  ls -al /etc/sudoers
+  871  chmod u+w /etc/sudoers
+  872  ls -al /etc/sudoers
+  873  vim /etc/sudoers
+  874  exit
+  875  sudo ls
+  876  ls -al /etc/sudoers
+  877  chmod u-w /etc/sudoers
+  878  ls -al /etc/sudoers
+  879  ls -al /home/
+  880  ls -al /home/atlas/
+  881  adduser atlas
+  882  su atlas
+  883  exit
+  884  sudo timedatectl set-timezone Asia/Shanghai
+  885  datge
+  886  date
+  887  exit
+  888  sudo systemctl status firewalld.service
+  889  sudo systemctl stop firewalld.service
+  890  exit
+  891  pwd
+  892  ls -al ~/janusGraph/
+  893  cp ~/janusGraph/janusgraph-0.4.0-hadoop2.zip /home/atlas/tools/
+  894  exit
+  895  chown /home/atlas/tools/janusgraph-0.4.0-hadoop2.zip 
+  896  chown atlas /home/atlas/tools/janusgraph-0.4.0-hadoop2.zip 
+  897  exit
+  898  useradd atlas
+  899  useradd atlas2
+  900  ls -al /home/
+  901  cat /etc/default/useradd 
+  902  cat /etc/sudoers
+  903  cat /etc/sudoers | grep "atlas2"
+  904  su atlas2
+  905  passwd atlas2
+  906  su atlas2
+  907  sudo vim /etc/sudoers
+  908  exit
+  909  ls -al 
+  910  ls -al sss
+  911  cat sss/sss2.sh 
+  912  exit
+  913  bin/gremlin-server.sh 
+  914  netstat -ntlp
+  915  ls -al 
+  916  ls -al conf/
+  917  ls -al conf/gremlin-server/
+  918  vim conf/gremlin-server/gremlin-server.yaml 
+  919  vim conf/gremlin-server/janusgraph-cql-es-server.properties 
+  920  cp ../janusgraph-0.4.0-hadoop2-bak/conf/janusgraph-hbase-solr.properties .
+  921  ls al 
+  922  ls -al 
+  923  mv janusgraph-hbase-solr.properties conf/gremlin-server/
+  924  ls -al conf/gremlin-server/
+  925  vim conf/gremlin-server/gremlin-server.yaml 
+  926  ls -al 
+  927  bin/gremlin-server.sh 
+  928  ls -al conf/gremlin-server/janusgraph-hbase-solr-server.properties
+  929  vim conf/gremlin-server/gremlin-server.yaml 
+  930  bin/gremlin-server.sh 
+  931  vim conf/gremlin-server/janusgraph-cql-es-server.properties 
+  932  vim conf/gremlin-server/janusgraph-hbase-solr.properties 
+  933  bin/gremlin-server.sh 
+  934  ls -al ../janusgraph-0.4.0-hadoop2-bak/lib/atl*
+  935  cp ../janusgraph-0.4.0-hadoop2-bak/lib/atl* lib
+  936  bin/gremlin-server.sh 
+  937  ls -al 
+  938  ls -al .m2
+  939  dh --depth-max=1
+  940  dd --depth-max=1
+  941  ud --depth-max=1
+  942  du --depth-max=1
+  943  du --max-depth=1
+  944  du --max-depth=1 .m2 -sh
+  945  du --max-depth=1 -h .m2 
+  946  cd atlas/atlas/distro/target/apache-atlas-3.0.0-SNAPSHOT-bin/apache-atlas-3.0.0-SNAPSHOT/
+  947  ls -al 
+  948  bin/atlas_start.py 
+  949  systemctl status firewalld.service
+  950  systemctl stop firewalld.service
+  951  systemctl status firewalld.service
+  952  bin/atlas_stop.py 
+  953  bin/atlas_start.py 
+  954  bin/atlas_stop.py 
+  955  pwd
+  956  cd !
+  957  cd ~
+  958  ls -al 
+  959  cd ls -al /home/atlas
+  960  ls -al atlas/
+  961  ls -al atlas/atlas/
+  962  exit
+  963  ls -al 
+  964  ls -al atlas/
+  965  echo $PATH
+  966  cd atlas/
+  967  ls -al 
+  968  cat env.sh 
+  969  cd apache-atlas-sources-2.0.0/distro/target/apache-atlas-2.0.0-bin
+  970  ls -al 
+  971  cd apache-atlas-2.0.0/
+  972  ls -al 
+  973  ifconfig
+  974  netstat -ntlpo
+  975  ls -al 
+  976  cd ~
+  977  ls -al 
+  978  cd atlas/
+  979  ls -al 
+  980  cd apache-atlas-2.0.0-sources.tar.gz 
+  981  cd apache-atlas-sources-2.0.0/
+  982  ls -al 
+  983  cat README.txt 
+  984  cd ..
+  985  ls -al 
+  986  cd ..
+  987  ls -al 
+  988  cd janusGraph/
+  989  ls -al 
+  990  cd janusgraph-0.4.0-hadoop2
+  991  ls -al 
+  992  bin/gremlin.sh 
+  993  cd ..
+  994  ls -al 
+  995  exit
+  996  ls -al 
+  997  history > commandList.txt
