@@ -2,7 +2,7 @@
 
 :plugin use tinkerpop.gephi
 :remote connect tinkerpop.gephi
-:remote config host 192.168.1.8
+:remote config host localhost
 :remote config workspace janus
 
 #激活提示
@@ -14,11 +14,13 @@
 
 
 graph = JanusGraphFactory.open("conf/janusgraph-hbase-solr.properties")
+graph = JanusGraphFactory.open("conf/janusgraph-hbase-solr-157.properties")
+graph = JanusGraphFactory.open("conf/janusgraph-hbase-solr-147.properties")
 g = graph.traversal()
 g.V().count().next()
 :plugin use tinkerpop.gephi
 :remote connect tinkerpop.gephi
-:remote config host 192.168.1.6
+:remote config host 192.168.1.75
 :remote config workspace janus
 :> graph
 
@@ -28,3 +30,61 @@ g.V().count().next()
 #遍历方法
 g.V(98432).valueMap().each{ it.entrySet().each{println it.getKey() + '-' + it.getValue()[0].getClass()} };
 g.V().valueMap().each{ it.entrySet().each{if (it.getValue()[0].getClass().toString().equals('class java.util.ArrayList')) {println it.getKey()}} };
+g.V().valueMap().each{ it.entrySet().each{if (it.getValue()[0].getClass().toString().equals('class org.apache.atlas.typesystem.types.TypeCategory')) {println it.getKey()}} };
+g.V().valueMap().each{ it.entrySet().each{println (it.getValue()[0].getClass().toString())} };
+
+#导出
+g.io('./ii.txt').with(IO.writer,IO.graphml). write().iterate()
+
+
+g.V().has('__typeName', 'AtlasGlossary').has('AtlasGlossary.qualifiedName', '珠海市_nick').valueMap()
+g.V().has('__typeName').groupCount().by('__typeName')
+g.V().groupCount().by(label)
+g.E().groupCount().by(label)
+
+g.V().has('__typeName', 'AtlasGlossary').drop()
+g.V().has('__typeName', 'AtlasGlossaryTerm').drop()
+g.V().has('__typeName', 'IsmpBaseItem').drop()
+g.E().has('__typeName').drop()
+g.tx().commit()
+
+
+org.janusgraph.diskstorage.solr.Solr6Index.mutate
+
+
+new ObjectMapper().writeValueAsString(((AtlasJanusGraph) graph).getVertexIndexKeys())
+
+
+
+图视图
+g.V().has('__guid', 'ac8eee9e-86c2-3d4a-93be-ac204ea3af55').outE().has('__typeName', 'AtlasGlossaryCategoryAnchor').inV().path()
+g.V().has('__guid', 'ac8eee9e-86c2-3d4a-93be-ac204ea3af55').outE().has('__typeName', 'AtlasGlossaryCategoryAnchor').inV().outE().has('__typeName', 'AtlasGlossaryCategoryHierarchyLink').inV().path()
+g.V().has('__guid', 'ac8eee9e-86c2-3d4a-93be-ac204ea3af55').outE().has('__typeName', 'AtlasGlossaryCategoryAnchor').inV().repeat(out('r:AtlasGlossaryCategoryHierarchyLink')).times(20).emit().path()
+g.V().has('__guid', 'ac8eee9e-86c2-3d4a-93be-ac204ea3af55').outE().has('__typeName', 'AtlasGlossaryCategoryAnchor').inV().repeat(out('r:AtlasGlossaryCategoryHierarchyLink')).times(20).emit().outE().has('__typeName', 'AtlasGlossaryTermCategorization').inV().path()
+g.V().has('__guid', 'ac8eee9e-86c2-3d4a-93be-ac204ea3af55').outE().has('__typeName', 'AtlasGlossaryCategoryAnchor').inV().repeat(out('r:AtlasGlossaryCategoryHierarchyLink')).times(20).emit().outE().has('__typeName', 'AtlasGlossaryTermCategorization').inV().outE().has('__typeName', 'AtlasGlossaryTranslation').inV().path()
+
+
+建索引：
+mgmt = graph.openManagement()
+findOut =mgmt.getPropertyKey('Enterprise.findOut')
+mgmt.buildIndex('findOut', Vertex.class).addKey(findOut).buildCompositeIndex()
+mgmt.commit()
+
+提交索引：
+graph.getOpenTransactions().forEach { tx -> tx.rollback() }
+mgmt = graph.openManagement()
+mgmt.getOpenInstances() //all open instances
+mgmt.getOpenInstances().forEach {
+  if (it.reverse().take(1) != ")") {
+    mgmt.forceCloseInstance(it)
+  }
+}
+mgmt.commit()
+
+ManagementSystem.awaitGraphIndexStatus(graph, 'findOut').status(SchemaStatus.REGISTERED).call()
+ManagementSystem.awaitGraphIndexStatus(graph, 'findOut').status(SchemaStatus.ENABLED).call()
+
+刷新索引：
+mgmt.awaitGraphIndexStatus(graph, 'findOut').call()
+mgmt.awaitGraphIndexStatus(graph, "findOut").status(SchemaStatus.REGISTERED, SchemaStatus.ENABLED).call()
+mgmt = graph.openManagement()
