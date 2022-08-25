@@ -83,8 +83,9 @@ mgmt.commit()
 
 ManagementSystem.awaitGraphIndexStatus(graph, 'findOut').status(SchemaStatus.REGISTERED).call()
 ManagementSystem.awaitGraphIndexStatus(graph, 'findOut').status(SchemaStatus.ENABLED).call()
+ManagementSystem.awaitGraphIndexStatus(graph, 'findOut').status(SchemaStatus.REINDEX).call()
 
 刷新索引：
-mgmt.awaitGraphIndexStatus(graph, 'findOut').call()
-mgmt.awaitGraphIndexStatus(graph, "findOut").status(SchemaStatus.REGISTERED, SchemaStatus.ENABLED).call()
 mgmt = graph.openManagement()
+mgmt.updateIndex(mgmt.getGraphIndex("findOut"), SchemaAction.REINDEX).get()
+mgmt.commit()
